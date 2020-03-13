@@ -1,0 +1,45 @@
+#bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+#header{
+    background-color:#FFA500;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100px;
+    text-align: center;
+}
+
+#left{
+    background-color: #FFA500;
+    width:20%;
+    float:left;
+}
+
+#main{
+    background-color:#EEEEEE;
+    width:60%;
+    float:left;
+}
+
+#right{
+    background-color:#EEEEEE;
+    width:20%;
+    float:right;
+}
+
+#footer{
+    background-color:#FFA500;
+    clear:both;
+    text-align:center;
+}

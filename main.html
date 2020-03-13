@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>#china-map1 {width:1000px; height: 700px;margin: auto;}</style>
+    <style>#china-map2 {width:1000px; height: 700px;margin: auto;}</style>
+    <style>#trend {width:360px; height: 360px;margin: auto;}</style>
+    <link rel="stylesheet" href="css/background.css">
+</head>
+<body>
+    <div id="container" style="width:100%;height:100%">
+        <div id="header">
+            <h1 style="margin-bottom:0;">Main Title of Web Page</h1>
+        </div>
+
+        <div id="left">
+            <b>Menu</b>
+        </div>
+
+        <div id="main" style="text-align: center;">
+            <button id="now" onclick="now()" style="width: 500px;height: 50px;border-radius: 15px;">现有确诊</button>
+            <button id="total" onclick="total()" style="width: 500px;height: 50px;border-radius: 15px;">累计确诊</button>
+            <div id="present-map"></div>
+            <div id="accumulate-map" style="display: none;"></div>
+        </div>
+
+        <div id="right">
+            <div id="line-chart"></div>
+            <button id="new-patient" style="width: 120px;height: 50px;border-radius: 15px;">新增确诊趋势</button>
+            <button id="total-patient" style="width: 120px;height: 50px;border-radius: 15px;">累计确诊趋势</button>
+            <button id="total-cureOrdead" style="width: 120px;height: 50px;border-radius: 15px;">累计治愈/死亡</button>
+        </div>
+
+        <div id="footer">
+            Copyright © zjw
+        </div>
+    </div>
+</body>
+</html>
