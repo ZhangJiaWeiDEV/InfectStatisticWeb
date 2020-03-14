@@ -22,7 +22,7 @@
             <button id="now" onclick="now()" style="width: 500px;height: 50px;border-radius: 15px;">现有确诊</button>
             <button id="total" onclick="total()" style="width: 500px;height: 50px;border-radius: 15px;">累计确诊</button>
             <div id="present-map"><script src="js/present-map.js"></script></div>
-            <div id="accumulate-map" style="display: none;"></div>
+            <div id="accumulate-map" style="display: none;"><script src="js/accumulate-map.js"></script></div>
         </div>
 
         <div id="right">
@@ -36,5 +36,20 @@
             Copyright © zjw
         </div>
     </div>
+
+    <script>
+        var div1 = document.getElementById("present-map");
+        var div2 = document.getElementById("accumulate-map");
+        function total()
+        {
+            div1.style.display = "none";
+            div2.style.display = "block";
+        }
+        function now()
+        {
+            div2.style.display = "none";
+            div1.style.display = "block";
+        }
+    </script>
 </body>
 </html>
