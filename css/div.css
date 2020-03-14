@@ -1,0 +1,17 @@
+#present-map {
+    width:1000px;
+    height: 700px;
+    margin: auto;
+}
+
+#accumulate-map {
+    width:1000px;
+    height: 700px;
+    margin: auto;
+}
+
+#line-chart {
+    width:360px;
+    height: 360px;
+    margin: auto;
+}
