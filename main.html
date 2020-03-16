@@ -16,7 +16,27 @@
         </div>
 
         <div id="left">
-            <b>Menu</b>
+            <h2 id="province-name"></h2>
+            <div id="up">
+                <div id="up-left">
+                    <p style="font-size: large;">现存确诊</p>
+                    <p id="up-left-number">365</p>
+                </div>
+                <div id="up-right">
+                    <p style="font-size: large;">累计确诊</p>
+                    <p id="up-right-number">5000</p>
+                </div>
+           </div>
+           <div id="down">
+                <div id="down-left">
+                    <p style="font-size: large;">累计治愈</p>
+                    <p id="down-left-number">1000</p>
+                </div>
+                <div id="down-right">
+                    <p style="font-size: large;">累计死亡</p>
+                    <p id="down-right-number">250</p>
+                </div>
+           </div>
         </div>
 
         <div id="main" style="text-align: center;">
@@ -106,6 +126,11 @@
         }
     </script>
     <script type="text/javascript">
+        document.getElementById("province-name").innerText = province;
+        document.getElementById("up-left-number").innerText = data[date - 1][province + "现存确诊"];
+        document.getElementById("up-right-number").innerText = data[date - 1][province + "累计确诊"];
+        document.getElementById("down-left-number").innerText = data[date - 1][province + "累计治愈"];
+        document.getElementById("down-right-number").innerText = data[date - 1][province + "累计死亡"];
         f(date);
         function f(id){
             m=$("select");

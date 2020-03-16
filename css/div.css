@@ -15,3 +15,35 @@
     height: 360px;
     margin: auto;
 }
+
+#up-left{
+    background-color: aquamarine;
+    width:49%;
+    padding:14% 0 14% 0;
+    float: left;
+    text-align: center;
+}
+
+#up-right{
+    background-color: blue;
+    width:49%;
+    padding:14% 0 14% 0;
+    float: right;
+    text-align: center;
+}
+
+#down-left{
+    background-color: crimson;
+    width:49%;
+    padding:14% 0 14% 0;float: left;
+    float: left;
+    text-align: center;
+}
+
+#down-right{
+    background-color: gold;
+    width:49%;
+    padding:14% 0 14% 0;
+    float: right;
+    text-align: center;
+}

@@ -108,8 +108,8 @@ var option = {
 };
 myChart.setOption(option);
 myChart.on('click', function(params){
-    var id=document.getElementById("province");
-	id.innerHTML = params.name;
+    localStorage.setItem("province", params.name);
+    location.reload();
 });
 myChart.on('mouseover', function (params) {
     var dataIndex = params.dataIndex;

@@ -1,6 +1,7 @@
 document.write("<script type='text/javascript' src='data.js'></script>");
 var myChart = echarts.init(document.getElementById('present-map'));
 var date = localStorage.getItem("date");
+var province = localStorage.getItem("province");
 var option = {
     title : {
         text: '疫情地图',
@@ -110,8 +111,8 @@ var option = {
 };
 myChart.setOption(option);
 myChart.on('click', function(params){
-    var id=document.getElementById("province");
-	id.innerHTML = params.name;
+    localStorage.setItem("province", params.name);
+    location.reload();
 });
 myChart.on('mouseover', function (params) {
     var dataIndex = params.dataIndex;
