@@ -1,12 +1,20 @@
 var trend = echarts.init(document.getElementById('line-chart'));
 
 // 指定图表的配置项和数据
-var dataX = ['2.21', '2.22', '2.23', '2.24', '2.25'];
-var dataY = [Math.round(Math.random()*500),Math.round(Math.random()*500),Math.round(Math.random()*500),Math.round(Math.random()*500),Math.round(Math.random()*500)];
-var dataZ = [500, 500, 500, 500, 500];
+var dataX = new Array();
+var dataY = new Array();
+var dataZ = new Array();
+var dataDead = new Array();
+var chart = localStorage.getItem("line-chart");
+for(var i = 0; i < date; i++) {
+    dataX[i] = data[i]['属性']
+    dataY[i] = data[i][province + chart];
+    dataZ[i] = 1;
+    dataDead[i] = data[i][province + '累计死亡']
+}
 var option = {
     title: {
-        text: '确诊人数趋势图',
+        text: chart+'趋势图',
         target: 'blank',
         left: '5%',
         textStyle: {
@@ -15,11 +23,18 @@ var option = {
             bottom: 20
         }
     },
+    legend: {
+ 
+        selected: {
+            '累计死亡' : false
+        },
+    },
     grid: {
         left: 40,
         right: 40,
         top: 30,
         bottom: 25,
+        containLabel: true   //防止宽度被截取
     },
     backgroundColor: 'rgba(0,0,0,0.8)',		// 背景颜色
     tooltip: {
@@ -38,6 +53,7 @@ var option = {
         },
         // 等同于 axisLine: true    结束
         axisLabel: {
+            interval: 5,
             color: '#fff',
             fontSize: 12
         },
@@ -65,8 +81,9 @@ var option = {
             fontSize: 12
         }
     },
-    series: [{
-        name: '确诊人数',
+    series: [
+    {
+        name: chart,
         type: 'line',
         data: dataY,
         smooth: true,
@@ -100,35 +117,12 @@ var option = {
                 color: "rgba(51,255,255,0.3)",
             }
         }
-    }, {
-        name: '占位背景',
-        type: 'bar',
-        itemStyle: {
-            normal: {
-                show: true,
-                color: '#fff',
-                opacity: 0
-            }
-        },
-        silent: true, // 图形是否不响应和触发鼠标事件，默认为 false，即响应和触发鼠标事件。
-        barWidth: '50%', // 柱条宽度
-        data: dataZ, // 占位背景在y轴上的值(高度)
-        animation: false // 是否开启动画
-    }, {
-        name: '占位背景',
-        type: 'bar',
-        itemStyle: {
-            normal: {
-                show: true,
-                color: '#fff',
-                opacity: 0.1
-            }
-        },
-        silent: true,
-        barWidth: '50%',
-        barGap: 0, // 柱间距离
-        data: dataZ,
-        animation: false
-    }],
+    },
+    {
+        name: '累计死亡',
+        type: 'line',
+        smooth: true,
+        data: dataDead
+    },],
 };
 trend.setOption(option)

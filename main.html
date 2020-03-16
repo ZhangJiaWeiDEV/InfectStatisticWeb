@@ -90,10 +90,10 @@
         </div>
 
         <div id="right">
-            <div id="line-chart"><script type="text/javascript" src="js/line-chart.js"></script></div>
-            <button id="new-patient" style="width: 120px;height: 50px;border-radius: 15px;">新增确诊趋势</button>
-            <button id="total-patient" style="width: 120px;height: 50px;border-radius: 15px;">累计确诊趋势</button>
-            <button id="total-cureOrdead" style="width: 120px;height: 50px;border-radius: 15px;">累计治愈/死亡</button>
+            <div id="line-chart" style="width: auto;"><script type="text/javascript" src="js/line-chart.js"></script></div>
+            <button id="new-patient" onclick="updateChart('现存确诊')" style="width: 120px;height: 50px;border-radius: 15px;">新增确诊趋势</button>
+            <button id="total-patient" onclick="updateChart('累计确诊')" style="width: 120px;height: 50px;border-radius: 15px;">累计确诊趋势</button>
+            <button id="total-cureOrdead" onclick="updateChart('累计治愈')" style="width: 120px;height: 50px;border-radius: 15px;">累计治愈/死亡</button>
         </div>
 
         <div id="footer">
@@ -120,8 +120,12 @@
         }
         function changeDate(e)
         {
-            date = e;
             localStorage.setItem("date", e);
+            location.reload();
+        }
+        function updateChart(e)
+        {
+            localStorage.setItem("line-chart", e);
             location.reload();
         }
     </script>
