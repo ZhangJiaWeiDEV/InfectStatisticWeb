@@ -68,40 +68,40 @@ var option = {
             },
             top:"3%",//组件距离容器的距离
             data:[
-                {name: '北京',value: 100},
-                {name: '天津',value: 100},
-                {name: '上海',value: 100},
-                {name: '重庆',value: 100},
-                {name: '河北',value: 500},
-                {name: '河南',value: 1000},
-                {name: '云南',value: 100},
-                {name: '辽宁',value: 100},
-                {name: '黑龙江',value: 100},
-                {name: '湖南',value: 1000},
-                {name: '安徽',value: 500},
-                {name: '山东',value: 500},
-                {name: '新疆',value: 10},
-                {name: '江苏',value: 500},
-                {name: '浙江',value: 1000},
-                {name: '江西',value: 500},
-                {name: '湖北',value: 100000},
-                {name: '广西',value: 100},
-                {name: '甘肃',value: 10},
-                {name: '山西',value: 100},
-                {name: '内蒙古',value: 10},
-                {name: '陕西',value: 100},
-                {name: '吉林',value: 10},
-                {name: '福建',value: 100},
-                {name: '贵州',value: 100},
-                {name: '广东',value: 1000},
-                {name: '青海',value: 10},
-                {name: '西藏',value: 1},
-                {name: '四川',value: 500},
-                {name: '宁夏',value: 10},
-                {name: '海南',value: 100},
-                {name: '台湾',value: 10},
-                {name: '香港',value: 10},
-                {name: '澳门',value: 10}
+                {name: '北京',value: accumulate('北京现存确诊')},
+                {name: '天津',value: accumulate('天津现存确诊')},
+                {name: '上海',value: accumulate('上海现存确诊')},
+                {name: '重庆',value: accumulate('重庆现存确诊')},
+                {name: '河北',value: accumulate('河北现存确诊')},
+                {name: '河南',value: accumulate('河南现存确诊')},
+                {name: '云南',value: accumulate('云南现存确诊')},
+                {name: '辽宁',value: accumulate('辽宁现存确诊')},
+                {name: '黑龙江',value: accumulate('黑龙江现存确诊')},
+                {name: '湖南',value: accumulate('湖南现存确诊')},
+                {name: '安徽',value: accumulate('安徽现存确诊')},
+                {name: '山东',value: accumulate('山东现存确诊')},
+                {name: '新疆',value: accumulate('新疆现存确诊')},
+                {name: '江苏',value: accumulate('江苏现存确诊')},
+                {name: '浙江',value: accumulate('浙江现存确诊')},
+                {name: '江西',value: accumulate('江西现存确诊')},
+                {name: '湖北',value: accumulate('湖北现存确诊')},
+                {name: '广西',value: accumulate('广西现存确诊')},
+                {name: '甘肃',value: accumulate('甘肃现存确诊')},
+                {name: '山西',value: accumulate('山西现存确诊')},
+                {name: '内蒙古',value: accumulate('内蒙古现存确诊')},
+                {name: '陕西',value: accumulate('陕西现存确诊')},
+                {name: '吉林',value: accumulate('吉林现存确诊')},
+                {name: '福建',value: accumulate('福建现存确诊')},
+                {name: '贵州',value: accumulate('贵州现存确诊')},
+                {name: '广东',value: accumulate('广东现存确诊')},
+                {name: '青海',value: accumulate('青海现存确诊')},
+                {name: '西藏',value: accumulate('西藏现存确诊')},
+                {name: '四川',value: accumulate('四川现存确诊')},
+                {name: '宁夏',value: accumulate('宁夏现存确诊')},
+                {name: '海南',value: accumulate('海南现存确诊')},
+                {name: '台湾',value: accumulate('台湾现存确诊')},
+                {name: '香港',value: accumulate('香港现存确诊')},
+                {name: '澳门',value: accumulate('澳门现存确诊')}
             ]
         }
     ]
@@ -115,3 +115,10 @@ myChart.on('mouseover', function (params) {
     var dataIndex = params.dataIndex;
     console.log(params);
 });
+function accumulate(provinceName){
+    var accumulateDate = 0;
+    for(var i = 0;i <= date-1;i++){
+        accumulateDate += parseInt(data[i][provinceName])
+    }
+    return accumulateDate;
+}

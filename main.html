@@ -20,8 +20,8 @@
         </div>
 
         <div id="main" style="text-align: center;">
-            <button id="now" onclick="now()" style="width: 500px;height: 50px;border-radius: 15px;">现有确诊</button>
-            <button id="total" onclick="total()" style="width: 500px;height: 50px;border-radius: 15px;">累计确诊</button>
+            <button id="now" onclick="now()" style="width: 500px;height: 50px;border-radius: 15px;background: yellow;">现有确诊</button>
+            <button id="total" onclick="total()" style="width: 500px;height: 50px;border-radius: 15px;background: white;">累计确诊</button>
             <form action="">
                 <select name="date" id="select" onchange="changeDate(this.value)">
                     <option value="1">01-19</option>
@@ -88,11 +88,15 @@
         {
             div1.style.display = "none";
             div2.style.display = "block";
+            document.getElementById("total").style.background="yellow";
+            document.getElementById("now").style.background="white";
         }
         function now()
         {
             div2.style.display = "none";
             div1.style.display = "block";
+            document.getElementById("now").style.background="yellow";
+            document.getElementById("total").style.background="white";
         }
         function changeDate(e)
         {
