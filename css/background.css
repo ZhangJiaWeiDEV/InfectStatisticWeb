@@ -1,45 +1,58 @@
-#bg {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -1;
-    transition: all 0.3s ease;
-}
-
 #header{
-    background-color:#FFA500;
     background-position: center;
-    background-size:cover;
+    background-size: 100%;
     background-repeat: no-repeat;
-    height: 100px;
+    height: 70px;
     text-align: center;
 }
 
 #left{
+    opacity: 0.7;
     background-color: #EEEEEE;
+    height: fit-content;
     width:20%;
     float:left;
+    min-height:80vh;
 }
 
 #main{
+    opacity: 0.8;
     background-color:#EEEEEE;
+    height: 95%;
     width:60%;
     float:left;
 }
 
 #right{
+    opacity: 0.7;
+    background-size: 100%;
     background-color:#EEEEEE;
     width:20%;
     float:right;
+    min-height:80vh;
 }
 
 #footer{
-    background-color:#FFA500;
+    background-color:rgb(253, 252, 251);
     clear:both;
     text-align:center;
+}
+
+h1{
+    text-align: center;
+    font-size: 60px;
+    color: rgb(132, 121, 132);
+    font-family:STXingkai;
+}
+
+h2{
+    text-align: center;
+    font-size: 50px;
+    color: purple;
+    font-family:STCaiyun;
+}
+
+p{
+    font-size: 40px; /*字体大小*/
+    font-family:STHupo  ;
 }

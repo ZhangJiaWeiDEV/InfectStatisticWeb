@@ -11,6 +11,7 @@
 }
 
 #line-chart {
+    align-items: center;
     width:360px;
     height: 360px;
     margin: auto;
